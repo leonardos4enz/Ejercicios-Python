@@ -1,0 +1,13 @@
+import requests
+
+datos_json = {
+    "asunto": "Prueba 3 Json Python",
+    "mensaje": "Hola",
+    "para": "leonardorsaenz@gmail.com"
+}
+
+url = 'https://prod-27.southcentralus.logic.azure.com:443/workflows/2e23e7f98c8f410f9698546a9a7ddc43/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=aBLTJv-klhZrAUBBCeQTdqflThCesXWiMTxBUqZ-u8I'
+
+resp = requests.post(url, json=datos_json)
+
+print(resp)
